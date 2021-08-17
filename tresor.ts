@@ -3,25 +3,32 @@ import { GegenstandNichtGefundenError } from "./gegenstandNichtGefundenError";
 
 export class Tresor {
   
-  private gegenstaende: Gegenstand[]
-
-  constructor() {
-    this.gegenstaende = new Array;
-  }
-
-  addGegenstand(gegenstand: Gegenstand) {
-    this.gegenstaende.push(gegenstand);
-  }
-
   /**
-   * Nachfolgend drei verschiedene Varianten des Durchsuchens des Arrays:
-   * 1. forEach-Schleife --> in typescript 'for ... of'
-   *    --> vgl. 'getGegenstandById_v1'
-   * 2. for-Schleife mit Iteration
-   *    --> vgl. 'getGegenstandById_v2'
-   * 3. Methode find()
-   *    --> vgl. 'getGegenstandById_v3'
+   * Typ ArrayList (vgl. Java) nicht vorhanden --> Array verwenden!
    */
+   private gegenstaende: Gegenstand[]
+
+   constructor() {
+     this.gegenstaende = new Array();
+   }
+ 
+   addGegenstand(gegenstand: Gegenstand) {
+     this.gegenstaende.push(gegenstand);
+   }
+ 
+   /**
+    * Nachfolgend drei verschiedene Varianten des Durchsuchens des Arrays:
+    * 1. forEach-Schleife --> in typescript 'for ... of'
+    *    --> vgl. 'getGegenstandById_v1'
+    * 2. for-Schleife mit Iteration
+    *    --> vgl. 'getGegenstandById_v2'
+    * 3. Methode find()
+    *    --> vgl. 'getGegenstandById_v3'
+    * 
+    * In allen Methoden wird hier STRICT EQUALS (===) verwendet.
+    * Prüft im Gegensatz zu EQUALS (==) nicht nur, ob sich die Werte entsprechen,
+    * sondern auch, ob die Datentypen dieselben sind.
+    */
 
   getGegenstandById_v1(id: number): Gegenstand {
     for (let gegenstand of this.gegenstaende) {
@@ -44,7 +51,8 @@ export class Tresor {
   getGegenstandById_v3(id: number): Gegenstand {
     let gefundenerGegenstand: Gegenstand = this.gegenstaende.find(gegenstand => gegenstand.id === id);
     /**
-     * Die Methode find() liefert den ersten Treffer zurück.
+     * Die Methode find() wendet die Prüfung 'gegenstand.id === id' auf jedes Element des Array an
+     * (vgl. 'gegenstand' im Lambda-Ausdruck) und liefert den ersten Treffer zurück.
      * Gibt es letztlich überhaupt keinen Treffer, wird 'undefined' zurückgegeben.
      */
     if (gefundenerGegenstand === undefined) {
@@ -64,9 +72,10 @@ export class Tresor {
      }
     /**
      * Das Array wird neu aufgebaut:
-     * 1. Es werden mithilfe der Methode filter() alle Elemente herausgefilter,
-     *    die nicht dem Element 'gegenstandToRemove' entsprechen.
-     * 2. Das Ergebnis des Filterns überschreibt das Array 'gegenstaende'.
+     * 1. Die Methode filter() wendet die Prüfung 'gegenstand !== gegenstandToRemove'
+     *    auf jedes Element des Array an. Hierdurch werden alle Elemente herausgefilter, die nicht dem
+     *    Element 'gegenstandToRemove' entsprechen.
+     * 2. Das Ergebnis des Filterns überschreibt sozusagen das Array 'gegenstaende'.
      */
     this.gegenstaende = this.gegenstaende.filter(gegenstand => gegenstand !== gegenstandToRemove);
   }
