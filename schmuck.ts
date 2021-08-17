@@ -12,5 +12,5 @@ export class Schmuck extends Gegenstand {
     text += "\nBezeichnung: " + this.bezeichnung;
     return text;
   }
-
+  
 }

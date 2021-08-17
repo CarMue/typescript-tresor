@@ -68,4 +68,5 @@
     text += "\nVersicherungswert: " + this.wert;
     return text;
   }
+  
 }

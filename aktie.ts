@@ -13,5 +13,5 @@ export class Aktie extends Gegenstand {
     text += "\nNennwert: " + this.nennwert;
     return text;
   }
-
+  
 }
