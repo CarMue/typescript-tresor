@@ -36,7 +36,7 @@ export class Tresor {
         return gegenstand;
       } 
     }
-    throw new GegenstandNichtGefundenError("Gegenstand mit der ID " + id + " nicht im Tresor!");
+    throw new GegenstandNichtGefundenError(id);
   }
 
   getGegenstandById_v2(id: number): Gegenstand {
@@ -45,7 +45,7 @@ export class Tresor {
         return this.gegenstaende[i];
       } 
     }
-    throw new GegenstandNichtGefundenError("Gegenstand mit der ID " + id + " nicht im Tresor!");
+    throw new GegenstandNichtGefundenError(id);
   }
 
   getGegenstandById_v3(id: number): Gegenstand {
@@ -56,7 +56,7 @@ export class Tresor {
      * Gibt es letztlich überhaupt keinen Treffer, wird 'undefined' zurückgegeben.
      */
     if (gefundenerGegenstand === undefined) {
-      throw new GegenstandNichtGefundenError("Gegenstand mit der ID " + id + " nicht im Tresor!");
+      throw new GegenstandNichtGefundenError(id);
     }
     return gefundenerGegenstand;
   }
@@ -68,8 +68,8 @@ export class Tresor {
      * Gibt es letztlich überhaupt keinen Treffer, wird 'undefined' zurückgegeben.
      */
     if (gefundenerGegenstand === undefined) {
-      throw new GegenstandNichtGefundenError("Folgender zu löschender Gegenstand nicht mehr im Tresor:\n" + gegenstandToRemove.toString);
-     }
+      throw new GegenstandNichtGefundenError(gegenstandToRemove.id);
+    }
     /**
      * Das Array wird neu aufgebaut:
      * 1. Die Methode filter() wendet die Prüfung 'gegenstand !== gegenstandToRemove'
