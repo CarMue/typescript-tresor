@@ -7,7 +7,7 @@ export class GegenstandNichtGefundenError extends Error {
      * name ist Klassenattribut in Superklasse Error,
      * jedoch nicht Parameter des Konstruktors von Error.
      */
-    super.name = "GegenstandNichtGefundenError";
+    super.name = "Gegenstand-nicht-gefunden-Error";
   }
 
 }
