@@ -25,9 +25,9 @@
    * Begründung:
    * Muss später ein Refactoring in dem Sinne vorgenommen werden, dass eines 
    * der Attribute doch auf private gesetzt werden muss, aber z. B. ein 
-   * schreibender Zugriff aus einer anderen Klasse erhalten bleiben soll,
-   * ließe sich ein Setter erzeugen, der genaus so heißt, wie das
-   * Klassenattribut hieß, als es noch public war. Der Setter wird nämlich,
+   * lesender Zugriff aus einer anderen Klasse erhalten bleiben soll,
+   * ließe sich ein Getter erzeugen, der genauso heißt, wie das
+   * Klassenattribut hieß, als es noch public war. Der Getter wird nämlich,
    * anders als in Java, einzig über dessen Namen angesprochen - also ohne
    * zusätzlich eine Methodenklammer mit aufzuführen. Das nun private
    * Klassenattribut wäre dann lediglich vorher umzubennen, z. B. 'wert'
