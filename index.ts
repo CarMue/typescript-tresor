@@ -53,7 +53,7 @@ console.log("Gesamtwert in Tresor: " + tresor.berechneGesamtwert());
 
 try {
   tresor.removeGegenstand(a2);
-  console.log("Folgender Gegenstand gelöscht: \n" + a2.toString);
+  console.log("Folgender Gegenstand gelöscht: \n" + a2.toString());
 } catch (error) {
   console.log(error.name + ":\t" + error.message);
 }

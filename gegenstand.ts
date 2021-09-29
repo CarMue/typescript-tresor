@@ -59,7 +59,7 @@
    */
   constructor(public readonly id: number, public wert: number) {}
 
-  get toString(): string {
+  toString(): string {
     /**
      * Datentyp der Variablen 'text' muss nicht zwangsläufig festgelegt werden.
      * Er ergibt sich andernfalls auch durch die Zuweisung.

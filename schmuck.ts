@@ -6,9 +6,9 @@ export class Schmuck extends Gegenstand {
     super(id, wert);
   }
 
-  get toString(): string {
+  toString(): string {
     let text: string = "\nSCHMUCKSTÜCK: ";
-    text += super.toString;
+    text += super.toString();
     text += "\nBezeichnung: " + this.bezeichnung;
     return text;
   }

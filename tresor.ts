@@ -6,7 +6,9 @@ export class Tresor {
   /**
    * Typ ArrayList (vgl. Java) nicht vorhanden --> Array verwenden!
    */
-      constructor(private gegenstaende: Gegenstand[]) {
+   private gegenstaende: Gegenstand[];
+
+   constructor() {
      this.gegenstaende = new Array();
    }
  
@@ -67,7 +69,7 @@ export class Tresor {
      */
     if (gefundenerGegenstand === undefined) {
       throw new GegenstandNichtGefundenError(gegenstandToRemove.id);
-    } else {
+    } 
       /**
        * Das Array wird neu aufgebaut:
        * 1. Die Methode filter() wendet die Prüfung 'gegenstand !== gegenstandToRemove'
@@ -75,8 +77,7 @@ export class Tresor {
        *    Element 'gegenstandToRemove' entsprechen.
        * 2. Das Ergebnis des Filterns überschreibt sozusagen das Array 'gegenstaende'.
        */
-      this.gegenstaende = this.gegenstaende.filter(gegenstand => gegenstand !== gegenstandToRemove);
-    }
+    this.gegenstaende = this.gegenstaende.filter(gegenstand => gegenstand !== gegenstandToRemove);
   }
 
   berechneGesamtwert(): number {
@@ -86,8 +87,8 @@ export class Tresor {
   }
 
   toString(): string {
-    let text: string = "LISTE DER GEGENSTÄNDE"
-    this.gegenstaende.forEach(gegenstand => text += gegenstand.toString);
+    let text: string = "LISTE DER GEGENSTÄNDE";
+    this.gegenstaende.forEach(gegenstand => text += "\n" + gegenstand.toString());
     return text;
   }
 

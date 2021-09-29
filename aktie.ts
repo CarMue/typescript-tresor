@@ -6,9 +6,9 @@ export class Aktie extends Gegenstand {
     super(id, wert);
   }
 
-  get toString(): string {
+  toString(): string {
     let text: string = "\nAKTIE: "; 
-    text += super.toString;
+    text += super.toString();
     text += "\nUnternehmen: " + this.unternehmen;
     text += "\nNennwert: " + this.nennwert;
     return text;

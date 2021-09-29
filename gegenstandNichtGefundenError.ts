@@ -1,6 +1,6 @@
 export class GegenstandNichtGefundenError extends Error {
 
-  constructor(public readonly id: number) {
+  constructor(private id: number) {
     super("Gegenstand mit der ID " + id + " nicht im Tresor gefunden!");
     /**
      * name ist Klassenattribut in Superklasse Error,
