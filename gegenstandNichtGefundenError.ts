@@ -1,8 +1,7 @@
 export class GegenstandNichtGefundenError extends Error {
 
   constructor(public readonly id: number) {
-    let message = "Gegenstand mit der ID " + id + " nicht im Tresor!"
-    super(message);
+    super("Gegenstand mit der ID " + id + " nicht im Tresor gefunden!");
     /**
      * name ist Klassenattribut in Superklasse Error,
      * jedoch nicht Parameter des Konstruktors von Error.
