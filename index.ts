@@ -18,32 +18,32 @@ tresor.addGegenstand(a2);
 tresor.addGegenstand(s1);
 
 try {
-  console.log(tresor.getGegenstandById_v1(1));
+  console.log(tresor.getGegenstandById_v1(1).toString());
 } catch (error) {
   console.log(error.name + ":\t" + error.message);
 }
 try {
-  console.log(tresor.getGegenstandById_v1(11)); //Test - existiert nicht
+  console.log(tresor.getGegenstandById_v1(11).toString()); //Test - existiert nicht
 } catch (error) {
   console.log(error.name + ":\t" + error.message);
 }
 try {
-  console.log(tresor.getGegenstandById_v2(2));
+  console.log(tresor.getGegenstandById_v2(2).toString());
 } catch (error) {
   console.log(error.name + ":\t" + error.message);
 }
 try {
-  console.log(tresor.getGegenstandById_v2(22)); //Test - existiert nicht
+  console.log(tresor.getGegenstandById_v2(22).toString()); //Test - existiert nicht
 } catch (error) {
   console.log(error.name + ":\t" + error.message);
 }
 try {
-  console.log(tresor.getGegenstandById_v3(3));
+  console.log(tresor.getGegenstandById_v3(3).toString());
 } catch (error) {
   console.log(error.name + ":\t" + error.message);
 }
 try {
-  console.log(tresor.getGegenstandById_v3(33)); //Test - existiert nicht
+  console.log(tresor.getGegenstandById_v3(33).toString()); //Test - existiert nicht
 } catch (error) {
   console.log(error.name + ":\t" + error.message);
 }
